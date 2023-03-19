@@ -1,10 +1,9 @@
 import React from 'react';
-import styles from '../styles.css'
+import '../styles.css'
 // Хуки находятся в react-redux
-import { Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 // Импортируем нужные действия
-import { decrement, increment, incrementByAmount } from '../slices/counterSlices';
+import { decrement, increment, incrementByAmount, resetValue } from '../slices/counterSlices';
 
 const App = () => {
   // Вытаскиваем данные из хранилища. state – все состояние
@@ -38,7 +37,18 @@ const App = () => {
         >
           Отнять
         </button>
-        <Button onClick={() => dispatch(incrementByAmount(42))}>Прибавить 42</Button>
+        <button type="button"
+          className="btn btn-primary"
+          onClick={() => dispatch(incrementByAmount(42))}>Прибавить 42</button>
+          <div className="zeroBtn">
+          <button type="button"
+          className="btn btn-dark"
+          aria-label="Reset value"
+          onClick={() => dispatch(resetValue())}
+          >
+           Обнулить
+          </button>
+          </div>
       </div>
     </div>
     </div>

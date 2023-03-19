@@ -20,12 +20,15 @@ const counterSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.value += action.payload;
     },
+    resetValue: (state) => {
+      state.value = 0;
+    }
   },
 });
 
 // Слайс генерирует действия, которые экспортируются отдельно
 // Действия генерируются автоматически из имен ключей редьюсеров
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { increment, decrement, incrementByAmount, resetValue } = counterSlice.actions;
 
 // По умолчанию экспортируется редьюсер, сгенерированный слайсом
 export default counterSlice.reducer;

@@ -21,3 +21,8 @@ body.dark .card {
   align-items: center;
   justify-content: space-between;
 }
+
+.zeroBtn {
+  display:flex;
+  justify-content: right;
+}
